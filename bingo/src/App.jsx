@@ -12,7 +12,7 @@ function App() {
 
   const iniciarBingo = () => {
     if (nomeBingo.trim() == "") {
-      notificar("Por favor, insira o nome do Jogo Para iniciar.")
+      notificar("Por favor, insira o nome do Bingo para iniciar.")
       return
     }
     setJogoIniciado(true)
