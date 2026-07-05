@@ -5,14 +5,13 @@ function Configuracao({
   setNomeBingo,
   quantidadeBolas,
   setQuantidadeBolas,
+  aoCLicar
 }) {
   return (
     <div className="container">
-
       <h1>BINGO SENAC</h1>
 
       <label>Nome do Bingo</label>
-
       <input
         type="text"
         value={nomeBingo}
@@ -20,7 +19,6 @@ function Configuracao({
       />
 
       <label>Quantidade de bolas</label>
-
       <select
         value={quantidadeBolas}
         onChange={(e) => setQuantidadeBolas(Number(e.target.value))}
@@ -30,9 +28,8 @@ function Configuracao({
         <option value={75}>75</option>
         <option value={90}>90</option>
       </select>
-
-      <button>Iniciar Bingo</button>
-
+      
+      <button onClick={aoCLicar}>Iniciar Bingo</button>
     </div>
   );
 }
