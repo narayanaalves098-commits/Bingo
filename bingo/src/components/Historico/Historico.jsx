@@ -5,7 +5,7 @@ function Historico({ sorteados }) {
 
   return (
     <div className="jogo-historico">
-      <h3>Números Sorteados ({sorteados.length}):</h3>
+      <h4>NÚMEROS SORTEADOS ({sorteados.length}):</h4>
       <div className="historico-lista">
         {sorteadosOrdenados.length > 0
           ? sorteadosOrdenados.map((num, index) => (

@@ -48,7 +48,6 @@ function App() {
       <Toaster
         position="bottom-right"
         reverseOrder={true}
-        gutter={3}
         toastOptions={{
           className: '',
           duration: 1000,
