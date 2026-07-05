@@ -18,12 +18,23 @@ function App() {
     setJogoIniciado(true)
   }
 
+  const limparFormulario = async () =>{
+    setNomeBingo("")
+    setQuantidadeBolas(75)
+  }
+
+  const encerrarBingo = async () => {
+    await setJogoIniciado(false)
+    limparFormulario()
+  }
+
   return (
     <>
       {jogoIniciado ? (
         <Jogo
           nomeBingo={nomeBingo}
           quantidadeBolas={quantidadeBolas}
+          voltarAoInicio={encerrarBingo}
         />
       ) : (
         <Configuracao
