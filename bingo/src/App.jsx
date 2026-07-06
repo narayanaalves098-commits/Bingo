@@ -1,32 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import Configuracao from "./components/Configuracao/Configuracao";
 import Jogo from "./components/Jogo/Jogo";
+import Modal from "./components/Modal/Modal";
 
 function App() {
-  const [nomeBingo, setNomeBingo] = useState("");
-  const [quantidadeBolas, setQuantidadeBolas] = useState(75);
+  const [nomeBingo, setNomeBingo] = useState("")
+  const [quantidadeBolas, setQuantidadeBolas] = useState(75)
   const [jogoConfigurado, setJogoConfigurado] = useState(false)
+  const [modalAberto, setModalAberto] = useState(false)
+  const [respostaModal, setRespostaModal] = useState(null)
 
   const notificar = (msg) => toast.error(msg)
 
   const iniciarBingo = () => {
     if (nomeBingo.trim() == "") {
-      notificar("Por favor, insira o nome do Bingo para iniciar.")
-      return
+      notificar("Por favor, insira o nome do Bingo para iniciar.");
+      return;
     }
     setJogoConfigurado(true)
   }
 
-  const limparFormulario = async () =>{
-    setNomeBingo("")
-    setQuantidadeBolas(75)
+  const abrirModalEncerramento = () => {
+    setModalAberto(true)
   }
 
-  const encerrarBingo = async () => {
-    await setJogoConfigurado(false)
-    limparFormulario()
-  }
+  useEffect(() => {
+    if (respostaModal === true) {
+      setJogoConfigurado(false);
+      setNomeBingo("");
+      setQuantidadeBolas(75);
+      setRespostaModal(null);
+    } else if (respostaModal === false) {
+
+      setRespostaModal(null);
+    }
+  }, [respostaModal])
 
   return (
     <>
@@ -34,7 +43,7 @@ function App() {
         <Jogo
           nomeBingo={nomeBingo}
           quantidadeBolas={quantidadeBolas}
-          voltarAoInicio={encerrarBingo}
+          voltarAoInicio={abrirModalEncerramento}
         />
       ) : (
         <Configuracao
@@ -45,6 +54,11 @@ function App() {
           aoCLicar={iniciarBingo}
         />
       )}
+      <Modal
+        aberto={modalAberto}
+        fecharModal={() => setModalAberto(false)}
+        setResposta={setRespostaModal}
+      />
       <Toaster
         position="bottom-right"
         reverseOrder={true}
@@ -59,7 +73,7 @@ function App() {
         }}
       />
     </>
-  );
+  )
 }
 
 export default App;

@@ -4,12 +4,14 @@ import { Bola } from "../Bola/Bola";
 import "./Jogo.css";
 import Historico from "../Historico/Historico";
 
+
 function Jogo({ nomeBingo, quantidadeBolas, voltarAoInicio }) {
   const [disponiveis, setDisponiveis] = useState([]);
   const [sorteados, setSorteados] = useState([]);
   const [bolaAtual, setBolaAtual] = useState(null);
   const [girando, setGirando] = useState(false);
   const [mostrarHistorico, setMostrarHistorico] = useState(false);
+  const [confirmarAcao, setConfirmarAcao] = useState(false)
 
   useEffect(() => {
     iniciarNovoJogo();
