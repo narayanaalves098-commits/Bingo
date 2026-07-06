@@ -38,22 +38,22 @@ function Jogo({ nomeBingo, quantidadeBolas, voltarAoInicio }) {
       const numeroSorteado = disponiveis[indiceAleatorio];
 
       const novosDisponiveis = disponiveis.filter((n) => n !== numeroSorteado);
-      
+
       setDisponiveis(novosDisponiveis);
       setSorteados([...sorteados, numeroSorteado]);
       setBolaAtual(numeroSorteado);
       setGirando(false);
-    }, 100); 
+    }, 100);
   };
 
   return (
     <div className="jogo-tela-cheia">
+      <div className="jogo-container">
       <header className="jogo-cabecalho">
         <button onClick={voltarAoInicio} className="btn-voltar">
-          ← Voltar para o início
+          ← Inicio 
         </button>
         <h1>{nomeBingo}</h1>
-        <div style={{ width: "150px" }}></div>
       </header>
 
       <main className="jogo-centro">
@@ -62,26 +62,33 @@ function Jogo({ nomeBingo, quantidadeBolas, voltarAoInicio }) {
         </div>
 
         <div className="jogo-botoes">
-          <button 
-            onClick={sortearNumero} 
+          <button
+            onClick={sortearNumero}
             disabled={girando || disponiveis.length === 0}
             className="btn-principal"
           >
             Sortear Número
           </button>
-          
-          <button onClick={() => setMostrarHistorico(!mostrarHistorico)}>
+
+          <button onClick={() => setMostrarHistorico(!mostrarHistorico)}
+            className="btn-secundario"
+          >
             {mostrarHistorico ? "Ocultar Histórico" : "Mostrar Histórico"}
           </button>
-          
-          <button onClick={iniciarNovoJogo} disabled={girando}>
+
+          <button onClick={iniciarNovoJogo} disabled={girando}
+            className="btn-perigo"
+          >
             Resetar Jogo
           </button>
         </div>
         {mostrarHistorico && (
-          <Historico sorteados={sorteados}/>
+          <div className="area-historico"> 
+            <Historico sorteados={sorteados} />
+          </div>
         )}
       </main>
+      </div>
     </div>
   );
 }
