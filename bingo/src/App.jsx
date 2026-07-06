@@ -6,7 +6,7 @@ import Jogo from "./components/Jogo/Jogo";
 function App() {
   const [nomeBingo, setNomeBingo] = useState("");
   const [quantidadeBolas, setQuantidadeBolas] = useState(75);
-  const [jogoIniciado, setJogoIniciado] = useState(false)
+  const [jogoConfigurado, setJogoConfigurado] = useState(false)
 
   const notificar = (msg) => toast.error(msg)
 
@@ -15,7 +15,7 @@ function App() {
       notificar("Por favor, insira o nome do Bingo para iniciar.")
       return
     }
-    setJogoIniciado(true)
+    setJogoConfigurado(true)
   }
 
   const limparFormulario = async () =>{
@@ -24,13 +24,13 @@ function App() {
   }
 
   const encerrarBingo = async () => {
-    await setJogoIniciado(false)
+    await setJogoConfigurado(false)
     limparFormulario()
   }
 
   return (
     <>
-      {jogoIniciado ? (
+      {JogoConfigurado ? (
         <Jogo
           nomeBingo={nomeBingo}
           quantidadeBolas={quantidadeBolas}
