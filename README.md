@@ -40,7 +40,7 @@ Estamos orgulhosos em apresentar os desenvolvedores por trás deste projeto:
 
 1. Clone o repositório em sua máquina:
    ```bash
-   git clone [https://github.com/seu-usuario-github/nome-do-repositorio.git](https://github.com/seu-usuario-github/nome-do-repositorio.git)
+   git clone https://github.com/narayanaalves098-commits/Bingo.git
 
 2. Entre na pasta do projeto:
    ```bash
