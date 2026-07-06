@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      {JogoConfigurado ? (
+      {jogoConfigurado ? (
         <Jogo
           nomeBingo={nomeBingo}
           quantidadeBolas={quantidadeBolas}
