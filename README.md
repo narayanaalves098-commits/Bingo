@@ -2,6 +2,8 @@
 
 > Um painel de sorteio e gerenciamento de Bingo, desenvolvido como projeto acadêmico. Conta com uma interface moderna em Glassmorphism, animações fluidas e controle dinâmico de dezenas.
 
+🌐 **Acesse o projeto online:** [bingo-chi-nine.vercel.app](https://bingo-chi-nine.vercel.app/)
+
 ---
 
 ## 🚀 Sobre o Projeto
