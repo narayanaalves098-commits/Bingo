@@ -51,7 +51,7 @@ function Jogo({ nomeBingo, quantidadeBolas, voltarAoInicio }) {
       <div className="jogo-container">
       <header className="jogo-cabecalho">
         <button onClick={voltarAoInicio} className="btn-voltar">
-          ← Inicio 
+          ← Sair 
         </button>
         <h1>{nomeBingo}</h1>
       </header>
