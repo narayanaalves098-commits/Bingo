@@ -1,4 +1,5 @@
 import React from 'react';
+import './Historico.css';
 
 function Historico({ sorteados }) {
   const sorteadosOrdenados = [...sorteados].sort((a, b) => a - b);
@@ -11,7 +12,7 @@ function Historico({ sorteados }) {
           ? sorteadosOrdenados.map((num, index) => (
               <span key={index} className="historico-item">{num}</span>
             ))
-          : <p>Nenhum número sorteado ainda.</p>
+          : <p className="historico-vazio">Nenhum número sorteado ainda.</p>
         }
       </div>
     </div>
