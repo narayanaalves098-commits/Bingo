@@ -3,9 +3,10 @@ import './Bola.css';
 
 export function Bola({ numero, girando }) {
   return (
+    <div className="bola-wrapper">
+      <h3 className="bola-titulo">ÚLTIMO SORTEADO</h3>
     <div className={`bola-bingo ${girando ? 'girando' : ''}`}>
       <div className="bola-conteudo">
-        <h3>ÚLTIMO SORTEADO:</h3>
         {girando && <span className="efeito-giro">...</span>}
         {!girando && numero !== null && (
           <span className="numero-grande">{numero}</span>
@@ -14,6 +15,7 @@ export function Bola({ numero, girando }) {
           <span className="bola-vazia">?</span>
         )}
       </div>
+    </div>
     </div>
   ); 
 }

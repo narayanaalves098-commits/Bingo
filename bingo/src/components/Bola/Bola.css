@@ -1,0 +1,79 @@
+.bola-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.bola-titulo {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.bola-bingo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #e94057 40%, #8a2387 80%, #1a1b35 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(233, 64, 87, 0.3),
+              inset -10px -10px 30px rgba(0, 0, 0, 0.5),
+              inset 10px 10px 20px rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.bola-conteudo {
+  width: 84px;
+  height: 84px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+              0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.numero-grande {
+  color: #1e293b;
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: monospace, sans-serif;
+}
+
+.bola-vazia {
+  color: #94a3b8;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.efeito-giro {
+  color: #ff0080;
+  font-size: 2.5rem;
+  font-weight: 800;
+  animation: piscar 0.2s infinite alternate;
+}
+
+.girando {
+  animation: balancar 0.4s infinite ease-in-out;
+}
+
+@keyframes balancar {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(-5deg) scale(1.03); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-3px) rotate(5deg) scale(0.98); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes piscar {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
