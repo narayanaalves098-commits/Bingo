@@ -43,7 +43,7 @@ function Jogo({ nomeBingo, quantidadeBolas, voltarAoInicio }) {
       setSorteados([...sorteados, numeroSorteado]);
       setBolaAtual(numeroSorteado);
       setGirando(false);
-    }, 100);
+    }, 2000);
   };
 
   return (
